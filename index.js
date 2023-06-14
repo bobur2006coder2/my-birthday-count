@@ -14,7 +14,11 @@ document.addEventListener('DOMContentLoaded', function() {
       const currentTime = now.getTime()
       const eventTime = eventDate.getTime()
       const remainingTime = eventTime - currentTime
-
+if (now>eventDate) {
+    eventDate = new Date( yearOfTheEvent + 1, 05, 15 ) 
+} else if (now.getFullYear() === eventDate.getFullYear() + 1) {
+  eventDate = new Date( now.getFullYear( ), 05, 15 ) 
+}
       let seconds = Math.floor( remainingTime / 1000 )
       let minutes = Math.floor( seconds / 60 )
       let hours =  Math.floor( minutes / 60 )
